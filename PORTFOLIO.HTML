@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESIGN2</title>
+    <script src="https://kit.fontawesome.com/fbbc997b00.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+    }
+
+    ::-webkit-scrollbar{
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track{
+        width: 10px;
+        background: #fff;
+        border-left: 0px solid #fff;
+        border-right: 0px solid #fff;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background: red;
+        width: 0;
+        height: 30%;
+        transition: .3s ease;
+    }
+
+    #main{
+        width: 100%;
+        height: 100vh;
+        position: relative; 
+    }
+
+    nav{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-color: #fff;
+        box-shadow: 5px 10px rgba(0, 0, 0, .2);
+        
+    }
+
+    nav .logo{
+        color: #000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-left: 40px;
+        font-size: 1.8em;
+    }
+
+    nav .navigation{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+    nav .navigation li{
+        list-style: none;
+        margin-right: 10px;
+    }
+
+    nav .navigation li a{
+        height: 40px;
+        line-height: 45px;
+        margin: 5px;
+        padding:10px 15px;
+        font-size: .9rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #000;
+        letter-spacing: 1px;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: all .4s;
+    }
+
+    nav .navigation li a:hover{
+        background-color: red;
+        color: #ffffff;
+        box-shadow: 5px 10px 30px rgba(221, 64, 64, 0.3);
+        transition: all ease .2s;
+    }
+
+    .btn1{
+        margin-right: 20px;
+        color: white;
+        font-weight: 900;
+        font-size: 1.4rem;
+        border-bottom: 0px solid red;
+        text-decoration: none;
+        padding: 8px 15px;
+        background: red;
+        transition:all .3s;
+        cursor: pointer;
+    }
+
+    .btn1:hover{
+        transform: scale(1.05);
+    }
+
+    /*home*/
+
+    .banner{
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }
+
+    .banner .textBx h2{
+        font-size: 3.5em;
+        color: #000;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+
+    .banner .textBx h2 span{
+        font-size: 2.5em;
+        font-weight: 700;
+    }
+
+    .banner .textBx h3{
+        font-size: 3.5em;
+        color: #000;
+        font-weight: 500;
+        margin-top: -0.9em;
+    }
+
+    .newsletter{
+        margin-top: -1.5em;
+    }
+
+    .newsletter form{
+        width: 400px;
+        max-width: 100%;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .newsletter form input:first-child{
+        display: inline-block;
+        width: 100%;
+        padding: 15px 130px 15px 13px;
+        border: 2px solid red;
+        outline: none;
+        border-radius: 30px;
+    }
+
+    .newsletter form input:last-child{
+        position: absolute;
+        display: inline-block;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 28px;
+        background-color: red;
+        color: #fff;
+        top: 6px;
+        right: 6px;
+    }
+
+    .cv{
+        margin-top: 20px;
+    }
+
+    .btn2{
+        background-color: red;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        border: 2px solid transparent;
+        padding: 10px 15px;
+        transition: transform .4s;
+        border-radius: 20px;
+    }
+
+    /*about*/
+
+    #skills{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin: auto auto 50px auto;
+    }
+
+    .skill-text{
+        width: 400px;
+    }
+
+    .skill-heading span{
+        color: #000;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+    }
+
+
+    .skill-heading h2{
+        color: #000;
+        font-size: 3.8rem;
+        margin-top: -5px;
+        margin-bottom: -7px;
+        font-weight: 400;
+    }
+
+
+    .skill-img{
+        width: 550px;
+        height: 500px;
+    }
+
+    .skill-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .s-box-container{
+        margin-top: 20px;
+    }
+
+    .skill-box{
+        display: flex;
+        margin: 5px;
+    }
+
+    .s-box-icon{
+        margin-right: 10px;
+    }
+
+    .s-box-icon i{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-size: 1.2rem;
+    }
+
+    .s-box-text strong{
+        color: red;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .s-box-text p{
+        color: #000;
+        font-size: 1em;
+    }
+
+    .fa-html5{
+        color: #e06061;
+    }
+
+    .fa-css3-alt{
+        color: #416cdf;
+    }
+
+    .fa-js-square{
+        color: #f98231;
+    }
+
+    /*service*/
+
+    .serv-head p{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: #000;
+        font-size: 45px;
+        background: #fff;
+    }
+
+    .container{
+        position: relative;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        background: #fff;
+    }
+
+    .container .box{
+        position: relative;
+        width: 300px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 30px;
+        transition: .5s;
+    }
+
+    .container .box:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50px;
+        width: 60%;
+        height: 100%;
+        background: #fff;
+        border-radius: 8px;
+        transform: skewX(15deg);
+        transition: .5s;
+    }
+
+    .container .box:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50px;
+        width: 70%;
+        height: 100%;
+        background: #fff;
+        border-radius: 8px;
+        transform: skewX(15deg);
+        transition: .5s;
+        filter: blur(30px);
+        transition: .5s;
+    }
+
+    .container .box:hover::before,
+    .container .box:hover::after{
+        transform: skewX(0deg);
+        left: 20px;
+        width: calc(100%-90px);
+        height: 100%;
+    }
+
+    .container .box:nth-child(1)::before,
+    .container .box:nth-child(1)::after{
+        background: linear-gradient(315deg,#ffbc00,#ff0058);
+    }
+
+    .container .box:nth-child(2)::before,
+    .container .box:nth-child(2)::after{
+        background: linear-gradient(315deg,#03a9f4,#ff0058);
+    }
+
+    .container .box:nth-child(3)::before,
+    .container .box:nth-child(3)::after{
+        background: linear-gradient(315deg,#4dff03,#00d0ff);
+    }
+
+
+    .container .box span{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 50;
+        pointer-events: none;
+    }
+
+    .container .box span::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+       width: 100%;
+       height: 100%;
+       border-radius: 8px;
+       background: rgba(255, 255, 255, .1);
+       backdrop-filter: blur(10px);
+       opacity: 0;
+       transition: .5s;
+       animation: animate 2s ease-in-out linear infinite; 
+       box-shadow: 0 5px 15px rgba(0, 0, 0, .5) ;
+    }
+
+    @keyframes animate{
+        0%,100%{
+            transform: translateY(10px);
+        }
+        50%{
+            transform: translateY(-10px);
+        }
+    }
+
+    .container .box:hover span:before{
+        top: -50px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        opacity: 1;
+    }
+
+    .container .box span::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+       width: 100%;
+       height: 100%;
+       border-radius: 8px;
+       background: rgba(255, 255, 255, .1);
+       backdrop-filter: blur(10px);
+       opacity: 0;
+       transition: .5s;
+       animation: animate 2s ease-in-out linear infinite; 
+       box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+       animation-delay: -1s;
+    }
+
+    .container .box:hover span:after{
+        bottom: -50px;
+        right: 50px;
+        width: 100px;
+        height: 100px;
+        opacity: 1;
+    }
+
+      .container .box .content{
+        position: relative;
+        left: 0;
+        padding: 20px 40px;
+        background: rgba(255, 255, 255, 0.11);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        transform: .5s;
+        z-index: 1;
+        color: #fff;
+    }
+
+    .container .box:hover .content{
+        left: -25px;
+        padding: 60px 40px;
+    }
+
+    .container .box .content h2{
+        font-size: 2em;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .container .box .content p{
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        line-height: 1.4em;
+    }
+
+    .container .box .content a{
+        display: inline-block;
+        font-size: 1.1em;
+        font-weight: 500;
+        background: #fff;
+        color: #111;
+        padding: 10px;
+        border-radius: 4px;
+        text-decoration: none;
+        margin-top: 5px;
+    }
+
+
+    /*work*/
+    .work-head p{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: #000;
+        font-size: 40px;
+        background: #fff;
+    }
+
+    .work{
+        background: #fff;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+
+    .heading h2{
+        color: #000;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -30px;
+    }
+
+    .heading p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #000;
+        margin-top: -30px;
+    }
+
+
+    .work .content1{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        color: #ffffff;
+    }
+
+    .work .content1 .workBx{
+        width: 20%;
+        padding: 5px;
+        color: #ffffff;
+    }
+
+
+    .work .content1 .workBx img{
+        display: flex;
+        justify-content: center;
+        align-items: center;       
+    }
+
+
+    .btn-tag{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-tag .btn3{
+        margin-right: 20px;
+        color: white;
+        font-weight: 900;
+        font-size: 1.2rem;
+        border-bottom: 0px solid red;
+        text-decoration: none;
+        padding: 8px 15px;
+        background: red;
+        transition:all .3s;
+        cursor: pointer;
+    }
+
+    .btn-tag .btn3:hover{
+        transform: scale(1.1);
+    }
+
+    /*testimonial*/
+    
+    .head-testmnial p{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: #000;
+        font-size: 45px;
+        background: #fff;
+    }
+
+    main{
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+    }
+
+    .testimonial{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2 ,min-content);
+        grid-gap: 20px;
+        margin-right: 50px;
+        margin-left: 50px;
+        margin-bottom: 10px;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        background-color: hsl(217, 19%, 35%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+        border-radius: 15px;
+        padding: 30px 40px;
+    }
+
+    .card_head{
+        display: flex;
+        align-items: center;
+        color: hsl(0,0%,81%);
+        margin-bottom: 10px;
+    }
+
+    .card_head img{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 2px solid #ffff;
+    }
+
+    .name{
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .title{
+        opacity: 0.5;
+    }
+
+    .card_heading{
+        color: #ffffff;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .card-detail{
+        color: hsl(0,0%,81%);
+        line-height: 1.5;
+    }
+
+    .card-1{
+        grid-column: 1/3;
+        background-color: hsl(263, 55%, 57%);
+        /*background: url(quote.jpg) no-repeat;*/
+        background-position: 80% 0;
+    }
+
+    .card-2{
+        grid-column: 3/4;
+    }
+
+    .card-3{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        background-color: #fff;
+    }
+
+    .card-4{
+        grid-row: 2/3;
+        grid-column: 2/4;
+        background-color: hsl(263, 55%, 57%);
+    }
+
+    .card-5{
+        grid-row: -1/1;
+        grid-column: 4/5;
+        background-color: #fff;
+    }
+
+    .card-3 .card_heading,
+    .card-3 .card_head,
+    .card-3 .card_detail,
+    .card-5 .card_heading,
+    .card-5 .card_head,
+    .card-5 .card-detail{
+        color: #000000;
+    }
+
+    @media (max-width: 1024px){
+        main{
+            padding: 20px;
+        }
+
+        .testimonial{
+            grid-template-columns: repeat(3 ,1fr);
+            grid-template-rows: repeat(3, min-content);
+            width: 95%;
+            grid-gap: 15px;
+        }
+
+        .card-1{
+            grid-column: 1/3;
+        }
+
+        .card-2{
+            grid-column: 3/4;
+        }
+
+        .card-5{
+            grid-column: 1/4;
+            grid-row: 3/4;
+        }
+    }
+
+    @media (max-width: 760px){
+        .testimonial{
+            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
+            grid-template-rows: minmax(auto,auto);
+        }
+
+        .card{
+            grid-column: unset !important;
+            grid-row: unset !important;
+        }
+    }
+
+    
+
+    /*hire me*/
+
+    .hire-head p{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: #000;
+        font-size: 50px;
+        padding: 40px 0 0 0;
+        border: none;
+        outline: none;
+        background: #fff;
+    }
+
+    .contact-me{
+        width: 100%;
+        height: 150px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contact-me p{
+        color: #000;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        margin-top: -100px;
+    }
+
+    .contact-me .button-two{
+        margin-right: 20px;
+        color: white;
+        font-weight: 900;
+        font-size: 1.4rem;
+        border-bottom: 0px solid red;
+        text-decoration: none;
+        padding: 10px 20px;
+        background: red;
+        transition:all .3s ;
+        cursor: pointer;
+    }
+
+    .contact-me .button-two:hover{
+        transform: scale(1.05);
+        cursor: pointer; 
+    }
+
+    /*contact*/
+
+    .contact3{
+        background: #fff;
+        margin-top: -60px;
+    }
+
+
+    .content4{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background: #fff;
+        padding-left: 30px;
+        padding-right: 50px;
+    }
+        
+
+
+    .heading2 h2{
+        color: #000;
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        padding: 30px 0 0 0;
+    }
+
+    .heading2 p{
+        color: #000;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .formBx{
+        min-width: 60%;
+    }
+
+    .formBx form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formBx form h3{
+        color: #000;
+        font-size: 23px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .formBx form input,
+    .formBx form textarea{
+        margin-bottom: 20px;
+        padding: 15px;
+        font-size: 16px;
+        background: transparent;
+        border: none;
+        outline: none;
+        background: #fff;
+        color: #000;
+        box-shadow: 15px 20px 60px rgba(131, 131, 131, 0.5);
+    }
+
+    .formBx form textarea{
+        min-height: 200px;
+    }
+
+    .formBx form input::placeholder,
+    .formBx form textarea::placeholder{
+        color: #999;
+    }
+
+    .formBx form input[type="submit"]{
+        color: white;
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-decoration: none;
+        display: inline-block;
+        width: 110px;
+        height: 45px;
+        line-height: 10px;
+        text-align: center;
+        background: red;
+        transition:all .3s;
+        cursor: pointer;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .formBx form input[type="submit"]:hover{
+        transform: scale(1.05);
+    }
+
+    .contactInfo1{
+        min-width: 40%;
+    }
+
+    .contactInfoBx1{
+        position: relative;
+    }
+
+    .contact-text h3{
+        margin-left: 80px;
+        font-size: 1.4em;
+    }
+
+    .contactInfoBox1 .box3{
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+    }
+
+    .contactInfoBx1 .box3 .icon3{
+        min-width: 40%;
+        padding-top: 4px;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+
+    .contactInfoBx1 .box3  .text3{
+        display: flex;
+        margin-left: 20px;
+        margin-top: -30px;
+        font-size: 16px;
+        color: #000;
+        flex-direction: column;
+        font-weight: 300;
+    }
+
+    .contactInfoBx1 .box3 .text3 h3{
+        font-weight: 500;
+        color: red;
+        margin-bottom: 0;
+    }
+
+    /*footer*/
+
+    footer{
+        padding: 5vw 5vw 2vw 5vw;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-col{
+        padding-bottom: 40px;
+    }
+
+    footer h3{
+        color: #000;
+        font-size: 24px;
+        font-weight: 300;
+        padding-bottom: 20px;
+    }
+
+    footer li{
+        list-style: none;
+        color: #555555;
+        padding: 10px 0;
+        font-size: 17px;
+        cursor: pointer;
+        transition: .3s ease;
+    }
+
+    footer li:hover{
+        color: #000;
+    }
+
+    footer p{
+        color: #555555;
+    }
+
+    footer .subscribe{
+        margin-top: 20px;
+    }
+
+
+    footer .subscribe input{
+        width: 330px;
+        padding: 15px 12px;
+        border: none;
+        outline: none;
+        color: #000000;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: 20px 40px 80px rgba(116, 116, 116, 0.5);
+    }
+
+    footer a.yellow{
+        color: white;
+        font-weight: 900;
+        font-size: 1.3rem;
+        text-decoration: none;
+        padding: 8px 10px;
+        background: red;
+        margin-left: 10px;
+        border-radius: 10px;
+        transition: .3s ease;
+    }
+
+    footer a.yellow:hover{
+        transform: scale(1.1);
+    }
+
+    footer .copyright{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    footer .copyright p{
+        color: #000;
+        font-weight: lighter;
+    }
+
+    footer .copyright .pro-links i{
+        display: inline-block;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        color: #ffffff;
+        background: red;
+        cursor: pointer;
+        transition: .3s ease;
+        line-height: 40px;
+        font-size: 22px;
+    }
+
+     footer .copyright .pro-links i:hover{
+        color: red;
+        background: #fff;
+        transform: scale(1.05);
+    }
+
+    nav .menu-btn{
+        display: none;
+    }
+
+   
+    
+
+
+
+    /*MEDIA*/
+
+    @media(max-width: 1069px){
+        ::-webkit-scrollbar-track{
+            width: 8px;
+        }
+
+        nav .logo{
+            font-size: 23px;
+            letter-spacing: 1.5px;
+        }
+
+        nav .navigation li{
+            margin-right: 8px;
+        }
+
+        nav .navigation li a{
+            padding:10px 14px;
+            line-height: 45px;
+        }
+
+        .btn1{
+            padding: 8px 20px;
+        }
+
+        /*home*/
+        .banner .textBx h2{
+            font-size: 3.3em;
+        }
+
+        .banner .textBx h2 span{
+            font-size: 2.3em;
+        }
+
+        .banner .textBx h3{
+            font-size: 3.3em;
+        }
+
+        .newsletter form{
+            width: 380px;
+        }
+
+        .newsletter form input:first-child{
+            padding: 13px 120px 13px 13px;
+        }
+
+        .newsletter form input:last-child{
+            padding: 10px 25px;
+            top: 5px;
+        }
+
+        .btn2{
+            padding: 9px 13px;
+        }
+
+        /*about*/
+
+        .skill-img{
+            width: 520px;
+            height: 480px;
+        }
+
+        .work .content1 .workBx{
+            width: 20%;
+        }
+    }
+
+
+    @media(max-width: 950px){
+
+        .navigation{
+            display: none;
+            position: absolute;
+            top: 65px;
+            left: 0px;
+            background-color: #fff;
+            border-bottom: 5px solid rgba(0, 0, 0, .2);
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            opacity: 0;
+        }
+
+        .navigation li{
+            width: 100%;
+        }
+
+        .navigation li a{
+            width: 100%;
+            height: 40px;
+            justify-content:center;
+            align-items: center;
+            margin: 0px;
+            padding: 25px;
+            border: 1px solid rgba(38, 38, 38, .03);
+        }
+
+        nav .menu-icon{
+            cursor: pointer;
+            float: right;
+            padding: 28px 20px;
+            position: relative;
+            user-select: none;
+        }
+
+        nav .menu-icon .nav-icon{
+            background-color: #333;
+            display: block;
+            height: 2px;
+            position: relative;
+            transition: background .3s ease-out;
+            width: 18px;
+        }
+
+        nav .menu-icon .nav-icon::before,
+        nav .menu-icon .nav-icon::after{
+            background: #333;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all .3s ease-out;
+            width: 100%;
+        }
+
+        nav .menu-icon .nav-icon::before{
+            top: 5px;
+        }
+
+        nav .menu-icon .nav-icon::after{
+            top: -5px;
+        }
+
+        nav .menu-btn:checked ~ .menu-icon .nav-icon{
+            background: transparent;
+        }
+
+        nav .menu-btn:checked ~ .menu-icon .nav-icon:before{
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        nav .menu-btn:checked ~ .menu-icon .nav-icon:after{
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        nav #menu-btn{
+            display: none;
+        }
+
+        nav #menu-btn:checked ~ .navigation{
+           display: block;
+           opacity: 1;
+        }
+
+        .banner{
+            padding-left: 25px;
+            padding-right: 25px;
+        }   
+
+        .banner .textBx h2{
+            font-size: 3.2em;
+        }
+
+        .banner .textBx h2 span{
+            font-size: 2.2em;
+        }
+
+        .banner .textBx h3{
+            font-size: 3.25em;
+        }
+
+        #skills{
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .skill-img{
+            width: 500px;
+            height: 450px;
+        }
+
+        .work .content1 .workBx{
+            width: 30%;
+        }
+    }
+
+    @media(max-width: 750px){
+        .banner{
+            padding-left: 25px;
+            padding-right: 25px;
+        }   
+
+        .banner .textBx h2{
+            font-size: 3.1em;
+        }
+
+        .banner .textBx h2 span{
+            font-size: 2.15em;
+            margin-top: -5px;
+        }
+
+        .banner .textBx h3{
+            font-size: 3.20em;
+        }
+
+        #skills{
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .work .content1 .workBx{
+            width: 40%;
+        }
+
+        .formBx{
+            min-width: 55%;
+        }
+
+        .formBx form h3{
+            font-size: 22px;
+        }
+
+        .formBx form input[type="submit"]{
+            width: 100px;
+            height: 45px;
+        }
+    }
+
+    @media(max-width: 425px){
+
+        nav .logo{
+            margin-left: 12px;
+            font-size: 1.5em;
+        }
+
+        .btn1{
+            padding: 7px 13px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+
+        /*home*/
+
+        .banner .textBx h2{
+            font-size: 1.8em;
+            line-height: 1.5em;
+        }
+
+        .banner .textBx h2 span{
+            font-size: 1.9em;
+        }
+
+        .banner .textBx h3{
+            font-size: 3em;
+            margin-top: -0.5em;
+        }
+
+        .btn2{
+            padding: 8px 14px;
+        }
+
+        /*skills*/
+
+        .skill-text{
+            width: 700px;
+        }
+
+        .skill-img{
+            width: 0;
+            height: 0;
+        }
+
+        .skill-img img{
+            background: none;
+            width: 0;
+            height: 0;
+        }
+
+        .s-box-container{
+            margin-top:20px;
+        }
+
+        .s-box-icon{
+            margin-right: 15px;
+        }
+
+        .s-box-text strong{
+            font-size: 18px;
+        }
+
+        .work .content1 .workBx{
+            width: 60%;
+        }
+
+        /*hireme*/
+
+        .hire-head p{
+            padding: 30px 0px 0px;
+        }
+
+        .contact-me p{
+            font-size: 25px;
+        }
+
+        .contact-me .button-two{
+            padding: 8px 18px;
+        }
+
+        .testimonial{
+            margin-right: 30px;
+            margin-left:30px;
+        }
+
+
+        /*contact*/
+
+        .formBx{
+            min-width: 100%;
+        }
+
+        .formBx form input[type="submit"]{
+            font-size: 1.4rem;
+            width: 100px;
+            height: 45px;
+        }
+
+        /*footer*/
+
+        footer p{
+            margin-top: -20px;
+        }
+
+        footer .subscribe{
+            margin-top: 10px;
+        }
+
+        footer .subscribe input{
+            margin-bottom: 15px;
+        }
+
+    }
+
+    @media(max-width: 375px){
+        nav .logo{
+            margin-left: 10px;
+            font-size: 1.4em;
+        }
+
+        .btn1{
+            padding: 7px 12px;
+            font-size: 1.2rem;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-right: 40px;
+            text-align: center;
+        }
+
+        /*home*/
+
+        .banner{
+            min-height: 100vh;
+            margin-left: 40px;
+        }
+
+        .banner .textBx h2{
+            font-size: 1.7em;
+            line-height: 1.4em;
+        }
+
+        .banner .textBx h2 span{
+            font-size: 1.8em;
+        }
+
+        .banner .textBx h3{
+            font-size: 2.65em;
+            margin-top: -0.5em;
+        }
+
+        .newsletter form input:first-child{
+            width: 85%;
+        }
+
+        .newsletter form input:last-child{
+            right: 65px;
+        }
+
+        .cv{
+            margin-top: 25px;
+        }
+
+        .btn2{
+            padding: 8px 16px;
+            font-size: 17px;
+        }
+
+        /*skills*/
+
+        .skill-text{
+            width: 700px;
+        }
+
+        .skill-img{
+            width: 0;
+            height: 0;
+        }
+
+        .skill-img img{
+            background: none;
+            width: 0;
+            height: 0;
+        }
+
+        .s-box-container{
+            margin-top:20px;
+        }
+
+        .s-box-icon{
+            margin-right: 15px;
+        }
+
+        .s-box-text strong{
+            font-size: 18px;
+        }
+
+        .work .content1 .workBx{
+            width: 70%;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        /*testimonials*/
+        
+        .testimonial{
+            margin-right: 15px;
+            margin-left:15px;
+        }
+
+        /*hireme*/
+
+        .hire-head p{
+            padding: 20px 0px 0px;
+        }
+
+        .contact-me p{
+            font-size: 22px;
+        }
+
+        .contact-me .button-two{
+            padding: 8px 18px;
+        }
+
+        /*contact*/
+
+        .formBx{
+            min-width: 100%;
+        }
+
+        .formBx form input[type="submit"]{
+            font-size: 1.4rem;
+            width: 100px;
+            height: 40px;
+        }
+
+        /*footer*/
+
+        footer p{
+            margin-top: -20px;
+        }
+
+        footer .subscribe{
+            margin-top: 10px;
+        }
+
+        footer .subscribe input{
+            margin-bottom: 20px;
+        }
+    }
+
+
+
+</style>
+<body>
+
+    <!--home start-->
+    <section id="main">
+        <nav>
+            <a href="" class="logo">Portfo<span style="color: red;">lio</span><small>.com</small></a>
+
+            <!--menu-btn-->
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+            </label>
+            <!--menu-->
+
+            <ul class="navigation">
+                <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+                <li><a href="#skills" onclick="toggleMenu();">About Me</a></li>
+                <li><a href="#services" onclick="toggleMenu();">Services</a></li>
+                <li><a href="#work" onclick="toggleMenu();">Work</a></li>
+                <li><a href="#testimonial" onclick="toggleMenu();">Testimonials</a></li>
+                <li><a href="#Contact" onclick="toggleMenu();">Contact</a></li>
+            </ul>
+            
+            <a href="" class="btn1">Subscribe Me</a>
+        </nav>
+
+        <div class="banner">
+            <div class="textBx">
+                <h2>Hello, I'm<br><span>Shubham Date</span></h2>
+                <h3>I'm a <span style="color: red;">Web Frontend & Back-end Developer.</span></h3>
+
+                <div class="newsletter">
+                    <form>
+                        <input type="email" name="email" id="mail" placeholder="Enter your Email">
+                        <input type="submit" name="Submit" value="Let's Start">
+                    </form>
+                </div>
+
+                <div class="cv">
+                    <a href="" class="btn2">Download CV</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--home end-->
+
+
+    <!--About start-->
+    <section id="skills">
+        <!--text-->
+        <div class="skill-text">
+            <!--heading-->
+            <div class="skill-heading">
+                <span>My Skills</span>
+                <h2>My Expertises</h2>
+            </div>
+            <!--skillboxcontainer-->
+            <div class="s-box-container"></div>
+            <!--skill-box-->
+            <div class="skill-box">
+                <!--icon-->
+                <div class="s-box-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <!--skill-box-text-->
+                <div class="s-box-text">
+                    <strong>Hyper Text Markup Language(HTML5)</strong>
+                    <p>I have 3years experience in HTML and I completed 100+ Html Project</p>
+                </div>
+            </div>
+
+            <!--skill-box-->
+            <div class="skill-box">
+                <!--icon-->
+                <div class="s-box-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <!--skill-box-text-->
+                <div class="s-box-text">
+                    <strong>Cascading Style Sheets(CSS3)</strong>
+                    <p>I have 3years experience in CSS and I completed 100+ CSS Project</p>
+                </div>
+            </div>
+
+            <!--skill-box-->
+            <div class="skill-box">
+                <!--icon-->
+                <div class="s-box-icon">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <!--skill-box-text-->
+                <div class="s-box-text">
+                    <strong>JavaScript(JS) 3.0</strong>
+                    <p>I have 3years experience in JS and I completed 50+ JS Project</p>
+                </div>
+            </div>
+
+            <!--skill-box-->
+            <div class="skill-box">
+                <!--icon-->
+                <div class="s-box-icon">
+                    <i class="fab fa-wordpress"></i>
+                </div>
+                <!--skill-box-text-->
+                <div class="s-box-text">
+                    <strong>Wordpress</strong>
+                    <p>I have 8months experience in Wordpress and I completed 10+ Wordpress Project</p>
+                </div>
+            </div>
+
+            <!--skill-box-->
+            <div class="skill-box">
+                <!--icon-->
+                <div class="s-box-icon">
+                    <i class="fab fa-bootstrap"></i>
+                </div>
+                <!--skill-box-text-->
+                <div class="s-box-text">
+                    <strong>Bootstrap</strong>
+                    <p>I have 6months experience in Bootstrap and I completed 10+ Bootstrap Project</p>
+                </div>
+            </div>
+
+            <!--skill-box-->
+            <div class="skill-box">
+                <!--icon-->
+                <div class="s-box-icon">
+                    <i class="fa-brands fa-php"></i>
+                </div>
+                <!--skill-box-text-->
+                <div class="s-box-text">
+                    <strong>PhP</strong>
+                    <p>I have 3months experience in Php and I completed 5+ php Project</p>
+                </div>
+            </div>
+
+        </div>
+        <!--img-->
+        <div class="skill-img">
+            <img src="
+            https://us.123rf.com/450wm/rawpixel/rawpixel1501/rawpixel150103266/35339616-diverse-people-and-training-concepts.jpg?ver=6" alt="">
+        </div>
+    </section>
+    <!--about end-->
+
+
+    <!--services start-->
+    <div class="serv-head">
+        <p>Services</p>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Basic Pack</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam nam non voluptas quas, pariatur tempore officia ut? Possimus tenetur vitae consectetur nihil soluta commodi repudiandae, ex molestiae impedit exercitationem rerum.</p>
+                <a href="">Buy Now</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Pro Pack</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam nam non voluptas quas, pariatur tempore officia ut? Possimus tenetur vitae consectetur nihil soluta commodi repudiandae, ex molestiae impedit exercitationem rerum.</p>
+                <a href="">Buy Now</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2>Premium Pack</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam nam non voluptas quas, pariatur tempore officia ut? Possimus tenetur vitae consectetur nihil soluta commodi repudiandae, ex molestiae impedit exercitationem rerum.</p>
+                <a href="">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    <!--services end-->
+
+
+    <!--work start-->
+    <div class="work-head">
+        <p>Projects</p>
+    </div>
+    <section class="work" id="work">
+        <div class="heading">
+            <h2>Our Latest Work</h2>
+            <p>FreeLancing and Contracts</p>
+        </div>
+        <div class="content1">
+
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyBH7BjTzAkyyHFwqArJg1KHZGMNTvJfCwJw&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpL1EyTz2P5WabI5Rl3f7g-NckDhAs_Lh1Qw&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuKxgmqD8wdK6o4CsZBQB8hiY2kZN3CQHXTA&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7os48TMJ6LPWRUAn-BPy5FqzoY45JjIb6MX0Qpl_kZ4mSp3EfrokfCdoDEuYRtGYRfE&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTySpOlS-KTXYPzHOZXzUVXfCDrbV_5uq0JPQ&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLSOmswMYx2WoV3ojvzipgImee-32l-X5DhyM4Iw1i19FPvzSrN4O631SGsaZCrOP4-U&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuKxgmqD8wdK6o4CsZBQB8hiY2kZN3CQHXTA&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7os48TMJ6LPWRUAn-BPy5FqzoY45JjIb6MX0Qpl_kZ4mSp3EfrokfCdoDEuYRtGYRfE&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTySpOlS-KTXYPzHOZXzUVXfCDrbV_5uq0JPQ&usqp=CAU
+                " alt="">
+            </div>
+            <div class="workBx">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTySpOlS-KTXYPzHOZXzUVXfCDrbV_5uq0JPQ&usqp=CAU
+                " alt="">
+            </div>
+
+        </div>
+
+        <div class="btn-tag">
+            <a href="" class="btn3">View More</a>
+        </div>
+
+    </section>
+    <!--work end-->
+
+
+    <!--testimonial start-->
+    <div class="head-testmnial">
+        <p>Testimonials</p>
+    </div>
+
+    <main>
+    <section class="testimonial">
+
+        <article class="card card-1">
+
+            <div class="card_head">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIFhv_5gCnocAhxcDQrgKgXsrdiSceqB5fg&usqp=CAU
+                " alt="">
+            
+                <div class="card_user">
+                    <div class="name">DagonGod1</div>
+                    <p class="title">Web Designer</p>
+                </div>
+            </div>
+
+            <div class="card_heading">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            </div>
+
+            <p class="card_detail">
+                Facilis suscipit repellat libero distinctio. Dolorum illum dignissimos veritatis aperiam nisi sint accusantium distinctio Dolores cupidi. Lorem ipsum dolor sit, amet consectetur adipisicing elit illo deleniti doloribus quas eum blanditiis quaerat praesentium, quasi, maiores autem totam. Nemo?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam omnis excepturi cupiditate eaque et, .
+            </p>
+
+        </article>
+
+        <article class="card card-2">
+
+            <div class="card_head">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIFhv_5gCnocAhxcDQrgKgXsrdiSceqB5fg&usqp=CAU
+                " alt="">
+            
+                <div class="card_user">
+                    <div class="name">DagonGod2</div>
+                    <p class="title">Graphic Desginer</p>
+                </div>
+            </div>
+
+            <div class="card_heading">
+                Lorem ipsum dolor, sit amet consectetur adipisici.
+            </div>
+
+            <p class="card_detail">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, fuga amet asperiores voluptatem facilis voluptatibus. Molestiae amet 
+            </p>
+
+        </article>
+
+
+        <article class="card card-3">
+
+            <div class="card_head">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIFhv_5gCnocAhxcDQrgKgXsrdiSceqB5fg&usqp=CAU
+                " alt="">
+            
+                <div class="card_user">
+                    <div class="name">DagonGod3</div>
+                    <p class="title">Blog Writer</p>
+                </div>
+            </div>
+
+            <div class="card_heading">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            </div>
+
+            <p class="card_detail">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi rnesciunt.
+            </p>
+
+        </article>
+
+
+        <article class="card card-4">
+
+            <div class="card_head">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIFhv_5gCnocAhxcDQrgKgXsrdiSceqB5fg&usqp=CAU
+                " alt="">
+            
+                <div class="card_user">
+                    <div class="name">DagonGod4</div>
+                    <p class="title">Content Writer</p>
+                </div>
+            </div>
+
+            <div class="card_heading">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamu.
+            </div>
+
+            <p class="card_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quisquam ipsa quo sint, iure voluptas necessitatibus incidunt deleniti nisi molestiae ad! Corporis, aspernatur magni aur adipisicing elit. maiores debitis Sint beatae cupiditate officiis, praesentium quidem nisi alias vel fugiat, autem mollitia fugit persconsectetur .</p>
+
+        </article>
+
+        
+
+
+        <article class="card card-5">
+
+            <div class="card_head">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIFhv_5gCnocAhxcDQrgKgXsrdiSceqB5fg&usqp=CAU
+                " alt="">
+            
+                <div class="card_user">
+                    <div class="name">DagonGod5</div>
+                    <p class="title">Code God</p>
+                </div>
+            </div>
+
+            <div class="card_heading">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis deserunt animi nesciunt.
+            </div>
+
+            <p class="card_detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum quam porro tenetur qui sunt, natus est veritatis repudiandae quibusdam nemo ea exercitationem ipsum eos expedita neque praesentium quo dolores. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam vitae in esse, ipsa officiis ut earum vero iusto nihil distinctio, saepe neque magni, aliquid odio. Neque rem quis non laborum! Lorem ipsum dolor sit amet consectetur adipisicing elit. !</p>
+
+        </article>
+            
+    </section>
+</main>
+
+    <!--testimonial end-->
+
+
+    <!--hireme start-->
+        <div class="hire-head">
+            <p>Hire Me</p>
+        </div>
+        <div class="container3">
+            <div class="contact-me">
+                <p>Let Me Get You a Beautiful Website.</p>
+                <a href="" class="button-two">Hire Me</a>
+            </div>
+        </div>
+    <!--hireme end-->
+
+
+    <!--contact start-->
+    <section class="contact3" id="Contact">
+        <div class="heading2">
+            <h2>Contact Us</h2>
+            <p>Fill up the Form and Contact Me and Get Your website Done in 3 Days.</p>
+        </div>
+        <div class="content4">
+            <div class="contactInfoBox1">
+                <div class="contact-text">
+                    <h3>Contact Info</h3>
+                </div>
+                <div class="contactInfoBx1">
+
+                    <div class="box3">
+                        <div class="icon3">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="text3">
+                            <h3>Address</h3>
+                            <p>4671 sugar Camp Road,<br>Owtonna,Minnestoa,<br>55060</p>
+                        </div>
+                    </div>
+
+                    <div class="box3">
+                        <div class="icon3">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="text3">
+                            <h3>Phone</h3>
+                            <p>507-475-6094</p>
+                        </div>
+                    </div>
+
+                    <div class="box3">
+                        <div class="icon3">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <div class="text3">
+                            <h3>Email</h3>
+                            <p>portfolio0987@Gmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="formBx">
+                <form action="">
+                    <h3>Message Me</h3>
+                    <input type="text" name="" placeholder="Full Name">
+                    <input type="email" name="" placeholder="Email">
+                    <textarea placeholder="Your Message"></textarea>
+                    <input type="submit" name="" value="Submit">
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <!--contact end-->
+
+
+    <!--footer start-->
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <li>Jobs</li>
+            <li>Brand Assets</li>
+            <li>Investor Relations</li>
+            <li>Terms Of Service</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Features</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Managed Website</li>
+            <li>Marketing Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Resources</h3>
+            <li>Guides</li>
+            <li>Research</li>
+            <li>Experts</li>
+            <li>Marketing Services</li>
+        </div>
+
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <div class="subscribe">
+                <input type="text" placeholder="Enter Email">
+                <a href="" class="yellow">Subscribe</a>
+            </div>
+        </div>
+        <!--footer-->
+
+
+        <!--copyright-->
+
+    <div class="copyright">
+        <p>Copyright @ 2022 Portfolio.All Right Reserved</p>
+        <div class="pro-links">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-twitter"></i>
+        </div>
+    </div>
+    <!--copyright-->
+    </footer>
+
+    <!--footer end-->
+
+
+</body>
+</html>
+
+
+
+
+<!--
+https://media.istockphoto.com/photos/hand-with-marker-writing-skill-concept-picture-id637711198?k=20&m=637711198&s=612x612&w=0&h=bznzNhH923ckyX6LINoDPtH6z3wbB0yO6Gvk5fQR0ms=
+
+
+
+https://us.123rf.com/450wm/rawpixel/rawpixel1501/rawpixel150103266/35339616-diverse-people-and-training-concepts.jpg?ver=6
+
+https://us.123rf.com/450wm/trueffelpix/trueffelpix1405/trueffelpix140500005/28072518-soft-skills-complement-hard-skills-which-are-the-occupational-requirements-of-a-job-and-many-other-a.jpg?ver=6
+
+-->
+
+
+
+
+
+
+
+
+
+
